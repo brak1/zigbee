@@ -1,0 +1,20 @@
+#notes on working in a zigbee environment
+#prior to trial, read through these notes to plan wireless network setup
+
+#0. Connect an XBee ZigBee USB device; command line "dmesg | grep ttyUSB" to ID the device
+
+#1. Downloaded XCTU application from Digi - 40002881_T.run (Debian Linux x64 download)
+
+#2. "XBee USB Adapter ZB PRO S2B" device firmware not recognized; perform "Install Legacy Radio Firware"
+
+#3. For the aforementioned device in (2.), Click "Update" to Update the radio module firmware; XBP24BZ7 - ZigBee Coordinator AT - 20A7
+
+#4. Example device hookup: "XBee 232 Adapter ZB Pro 9-30V" is recognized as a network remote module by the newly activated coordinator
+
+#5. "It is not possible to configure remote radio modules when the local one is in AT mode."
+
+#6. Changing the device (2.) firmware to API mode. Changes to "ZigBee Coordinator API - 21A7"
+
+#7. Device in (4.) not joined to new firmware coordinator. 
+
+
