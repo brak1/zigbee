@@ -15,6 +15,10 @@
 
 #6. Changing the device (2.) firmware to API mode. Changes to "ZigBee Coordinator API - 21A7"
 
-#7. Device in (4.) not joined to new firmware coordinator. 
+#7. Note that with device in API mode, you cannot easily communicate in terminal with "+++" escape comand and then use AT commands.
+
+#8. For API mode, send bytes in HEX to achieve a command but must generate checksum at end of each message via: 0xFF - (0x23 + 0x11) = (0xFF - 0x34) = 0xCB.  Where 0x23 and 0x11 were payload bytes.\
+
+#9. 
 
 
