@@ -1,0 +1,67 @@
+connect_SmartThings.txt 
+Document started on 2020-05-06
+
+This document is work towards getting an XStick onto my home SmartThings network and then creating a program that uses the serial port provided by the XStick to simulate a switch device or others.  
+
+1) Connect an XStick to the computer - tested 2020-05-06 Digi XBee XStick XB24-ZB ZigBee Router API with firmware version 23A7 
+2) Guide to connect XStick came from this URL: https://community.smartthings.com/t/faq-mapping-your-zigbee-network-with-digis-xctu/28477/11 
+The XStick parameters are set as follows: 
+      <setting command="ID">0</setting>
+      <setting command="SC">FFFF</setting>
+      <setting command="SD">3</setting>
+      <setting command="ZS">2</setting>
+      <setting command="NJ">5A</setting>
+      <setting command="NW">0</setting>
+      <setting command="JV">0</setting>
+      <setting command="JN">0</setting>
+      <setting command="DH">0</setting>
+      <setting command="DL">0</setting>
+      <setting command="NI">xStick</setting>
+      <setting command="NH">30</setting>
+      <setting command="BH">0</setting>
+      <setting command="AR">FF</setting>
+      <setting command="DD">3000C</setting>
+      <setting command="NT">3C</setting>
+      <setting command="NO">0</setting>
+      <setting command="CR">3</setting>
+      <setting command="PL">4</setting>
+      <setting command="PM">1</setting>
+      <setting command="EE">1</setting>
+      <setting command="EO">1</setting>
+      <setting command="KY">5A6967426565416C6C69616E63653039</setting>
+      <setting command="BD">7</setting>
+      <setting command="NB">0</setting>
+      <setting command="SB">0</setting>
+      <setting command="D7">1</setting>
+      <setting command="D6">0</setting>
+      <setting command="AP">1</setting>
+      <setting command="AO">0</setting>
+      <setting command="SM">0</setting>
+      <setting command="SN">1</setting>
+      <setting command="SO">0</setting>
+      <setting command="SP">20</setting>
+      <setting command="ST">1388</setting>
+      <setting command="PO">0</setting>
+      <setting command="D0">1</setting>
+      <setting command="D1">0</setting>
+      <setting command="D2">0</setting>
+      <setting command="D3">0</setting>
+      <setting command="D4">0</setting>
+      <setting command="D5">1</setting>
+      <setting command="P0">1</setting>
+      <setting command="P1">0</setting>
+      <setting command="P2">0</setting>
+      <setting command="PR">1FFF</setting>
+      <setting command="LT">0</setting>
+      <setting command="RP">28</setting>
+      <setting command="DO">1</setting>
+      <setting command="IR">0</setting>
+      <setting command="IC">0</setting>
+      <setting command="V+">0</setting>
+3) Then let it run, and the XStick will say in XCTU Network Mode that it cannot read itself
+4) Open SmartThings app, add a device, SmartThings, available option was a Temp/Humidity sensor, clicked search/add, power-cycled the XStick and it magically joined the network 
+5) Now you can see the other ZigBee things on the SmartThings network - as of 2020-05-06 I could see the Coordinator (presumably the SmartThings hub) and four (4) end devices on my network (probably some switches and sensors - didn't check what's what) 
+6) In the SmartThings App, the XStick shows up as a "Thing" in the room I added it to 
+7) Later, give that Thing some abilities: Goal is to send messages over serial port, API formatted command packets to the network so this thing acts as a switch that can toggle my garage door button, for example 
+
+
